@@ -85,6 +85,6 @@ app.get("/", (req, res) => {
 });
 
 // server จะรันที่ port 3000 หรือ port ใดๆก็ตามใจเราและ callback จะทำงานเมื่อ
-app.listen(3000, () => {
-    console.log('Server Listen At 3000')
+app.listen(80, () => {
+    console.log('Server Listen At 80')
 });
