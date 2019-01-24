@@ -1,11 +1,12 @@
 const puppeteer = require('puppeteer');
 const request = require('request');
 const http = require('http');
-const port=process.env.PORT || 3000
+const port=process.env.PORT || 80
 const server = http.createServer((req, res) => {
+  
   (async () => {
     const browser = await puppeteer.launch();
-  
+    console.log("xxxxxxxxxxx");
     //var q = querystring.parse('year=2017&month=february');
     page = await browser.newPage();
     //await page.goto('https://glacial-spire-22413.herokuapp.com/write.php', { waitUntil: 'load' });
