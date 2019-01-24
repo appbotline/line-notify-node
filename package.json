@@ -1,0 +1,23 @@
+{
+  "name": "lotto-notify",
+  "version": "1.0.0",
+  "description": "for learning",
+  "main": "write.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/noraratp/line-notify-node.git"
+  },
+  "author": "NoraratP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/noraratp/line-notify-node/issues"
+  },
+  "homepage": "https://github.com/noraratp/line-notify-node#readme",
+  "dependencies": {
+    "puppeteer": "^1.11.0",
+    "request": "^2.88.0"
+  }
+}
