@@ -29,7 +29,6 @@ app.get("/", (req, res) => {
                 async function genArray () {
                     var data = [];
                     var round = "จับยี่กี รอบที่";
-                    //var round2 = "จับยี่กี VIP รอบที่";
                     var three = "รอผล";
                     var two = "รอผล";
                     for (var i = 0; i < findTable.length; i++) {
@@ -87,7 +86,7 @@ app.get("/", (req, res) => {
                 bearer: 'O76bVtZeMQjCKAgGlmfT7hR43fZs9UAmyA1oNsgU2d6', //token
             },
             form: {
-                message: messageLine, //ข้อความที่จะส่ง
+                message: message, //ข้อความที่จะส่ง
             },
         }, (err, httpResponse, body) => {
             if (err) {
