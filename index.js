@@ -28,7 +28,8 @@ app.get("/", (req, res) => {
 
                 async function genArray () {
                     var data = [];
-                    var round = "จับยี่กี รอบที่ 3";
+                    var round = "จับยี่กี รอบที่";
+                    //var round2 = "จับยี่กี VIP รอบที่";
                     var three = "รอผล";
                     var two = "รอผล";
                     for (var i = 0; i < findTable.length; i++) {
@@ -37,7 +38,14 @@ app.get("/", (req, res) => {
                             three = findTable[i].nextSibling.nextElementSibling.innerText.trim();
                             two = findTable[i].nextSibling.nextSibling.nextElementSibling.innerText.trim();
                             // retData = { round: round, three: three, two: two };
-                            await data.push({id : round , value : round + "\r\n===============\r\n => 3 ตัว : " + three + " \r\n => 2 ตัว : " + two});
+                            await data.push({id : round , value : round + "\r\n===============\r\n => 3 ตัว : " + three + " \r\n => 2 ตัว : " + two + "\r\n===============\r\n"});
+                        }
+                        if (findTable[i].innerHTML.includes("จับยี่กี VIP รอบที่")) {
+                            round = findTable[i].innerHTML.trim();
+                            three = findTable[i].nextSibling.nextElementSibling.innerText.trim();
+                            two = findTable[i].nextSibling.nextSibling.nextElementSibling.innerText.trim();
+                            // retData = { round: round, three: three, two: two };
+                            await data.push({id : round , value : round + "\r\n===============\r\n => 3 ตัว : " + three + " \r\n => 2 ตัว : " + two + "\r\n===============\r\n"});
                         }
                     }
                     return await data;
@@ -46,6 +54,7 @@ app.get("/", (req, res) => {
 
             //console.log(newPage);
             messageLine = await genHTML(newPage);
+            messageLine += await genHTML2(newPage);
             //console.log(messageLine);
             notifyLine(messageLine);
         })();
@@ -53,6 +62,14 @@ app.get("/", (req, res) => {
 
     async function genHTML (array) {
         var round = "จับยี่กี รอบที่ " + id;
+        for (var i = 0; i < array.length; i++) {
+            if (array[i].id.trim() == round.trim()) {
+                return array[i].value;
+            }
+        }
+    }
+    async function genHTML2 (array) {
+        var round = "จับยี่กี VIP รอบที่ " + id;
         for (var i = 0; i < array.length; i++) {
             if (array[i].id.trim() == round.trim()) {
                 return array[i].value;
