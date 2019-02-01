@@ -3,6 +3,7 @@ const puppeteer = require('puppeteer');
 const request = require('request');
 var app = express(); //
 var messageLine = "";
+app.set('port', (process.env.PORT || 80));
 app.get("/", (req, res) => {
     // server จะสามารถส่งทั้ง header ต่างๆหรือจะตัวหนังสือ json อะไรก็ได้กลับไป
     //res.send("Hello World");   
