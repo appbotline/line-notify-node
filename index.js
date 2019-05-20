@@ -83,7 +83,7 @@ app.get("/", (req, res) => {
                 'Content-Type': 'application/x-www-form-urlencoded',
             },
             auth: {
-                bearer: 'O76bVtZeMQjCKAgGlmfT7hR43fZs9UAmyA1oNsgU2d6', //token
+                bearer: 'dGHz8fnIWSoldxn73F6m5S3aUL8epsVlQy2lEAy6c5D', //token
             },
             form: {
                 message: message, //ข้อความที่จะส่ง
